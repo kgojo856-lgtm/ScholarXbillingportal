@@ -56,7 +56,19 @@ export default function App() {
 
   const [invoices, setInvoices] = useState<Invoice[]>(() => {
     const cached = localStorage.getItem('saas_billing_invoices');
-    return cached ? JSON.parse(cached) : INITIAL_INVOICES;
+    if (cached) {
+      try {
+        const parsed = JSON.parse(cached) as Invoice[];
+        const newItems = INITIAL_INVOICES.filter(initInv => !parsed.some(p => p.id === initInv.id));
+        if (newItems.length > 0) {
+          return [...parsed, ...newItems];
+        }
+        return parsed;
+      } catch (e) {
+        return INITIAL_INVOICES;
+      }
+    }
+    return INITIAL_INVOICES;
   });
 
   const [logs, setLogs] = useState<AuditLog[]>(() => {

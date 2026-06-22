@@ -282,6 +282,79 @@ export const INITIAL_INVOICES: Invoice[] = [
     lineItems: [
       { id: 'li-13', desc: 'API Traffic Excess Overage Fee (60,000 blocks at $0.002)', qty: 1, unitPrice: 120.00, total: 120.00 }
     ],
+  },
+  {
+    id: 'INV-2026-007',
+    tenantId: 'tenant-2', // Aura Design Studio
+    subscriptionId: 'sub-aura',
+    issueDate: '2026-06-10',
+    dueDate: '2026-07-10',
+    subtotal: 195.00,
+    tax: 35.10,
+    taxRate: 0.18,
+    amount: 230.10,
+    status: 'OUTSTANDING',
+    paymentMethod: 'Razorpay Direct NetBanking',
+    billingCycle: 'YEARLY',
+    billingReason: 'Design Seat Expansion Adjustments',
+    lineItems: [
+      { id: 'li-14', desc: 'Aura Premium Design Seat expansion licenses', qty: 3, unitPrice: 65.00, total: 195.00 }
+    ],
+  },
+  {
+    id: 'INV-2026-008',
+    tenantId: 'tenant-3', // Acme Logistics Corp
+    subscriptionId: 'sub-acme',
+    issueDate: '2026-05-15',
+    dueDate: '2026-06-05',
+    subtotal: 900.00,
+    tax: 162.00,
+    taxRate: 0.18,
+    amount: 1062.00,
+    status: 'OVERDUE',
+    paymentMethod: 'ACH Corporate Wire Transfer',
+    billingCycle: 'MONTHLY',
+    billingReason: 'Relational Cloud Database Provision Addon Upgrade',
+    lineItems: [
+      { id: 'li-15', desc: 'Acme Relational Postgre SQL Isolated Instance Setup Fee', qty: 1, unitPrice: 500.00, total: 500.00 },
+      { id: 'li-16', desc: 'SLA Premium Support High Available Nodes Overage', qty: 1, unitPrice: 400.00, total: 400.00 }
+    ],
+  },
+  {
+    id: 'INV-2026-009',
+    tenantId: 'tenant-4', // Lunar Bio Tech
+    subscriptionId: 'sub-lunar',
+    issueDate: '2026-06-15',
+    dueDate: '2026-06-30',
+    subtotal: 61.44,
+    tax: 11.06,
+    taxRate: 0.18,
+    amount: 72.50,
+    status: 'OUTSTANDING',
+    paymentMethod: 'Stripe Credit Card (•••• 1121)',
+    billingCycle: 'MONTHLY',
+    billingReason: 'Micro-trial Growth conversion seat activation support',
+    lineItems: [
+      { id: 'li-17', desc: 'Growth Core active workspace isolation licenses', qty: 4, unitPrice: 15.36, total: 61.44 }
+    ],
+  },
+  {
+    id: 'INV-2026-010',
+    tenantId: 'tenant-1', // SaaSify Inc.
+    subscriptionId: 'sub-saasify',
+    issueDate: '2026-06-20',
+    dueDate: '2026-07-05',
+    subtotal: 450.00,
+    tax: 81.00,
+    taxRate: 0.18,
+    amount: 531.00,
+    status: 'OUTSTANDING',
+    paymentMethod: 'Stripe Credit Card (•••• 4242)',
+    billingCycle: 'MONTHLY',
+    billingReason: 'Enterprise API Meter expansion burst throughput booster pack',
+    lineItems: [
+      { id: 'li-18', desc: 'Secure high-frequency API burst gateway channel block expansion', qty: 1, unitPrice: 450.00, total: 450.00 }
+    ],
   }
 ];
 
