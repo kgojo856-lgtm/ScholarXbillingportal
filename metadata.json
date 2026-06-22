@@ -1,0 +1,6 @@
+{
+  "name": "Enterprise Billing Portal",
+  "description": "Enterprise-grade Role-Based SaaS Billing Portal with multi-tenant subscription management, usage tracking, finance analytics, and billing simulations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
