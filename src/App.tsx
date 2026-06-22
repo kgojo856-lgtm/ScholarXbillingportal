@@ -8,7 +8,6 @@ import {
   Bell, 
   CreditCard, 
   Layers, 
-  Settings, 
   Users, 
   Info, 
   Sparkles, 
@@ -34,7 +33,6 @@ import { RoleBadge } from './components/RoleBadge';
 import { MetricCard } from './components/MetricCard';
 import { FinancialTrendChart, SeatMultiTenantChart, UsageCircularGauge } from './components/InteractiveCharts';
 import { InvoiceDownload } from './components/InvoiceDownload';
-import { SchemaView } from './components/SchemaView';
 import { AuditLogger } from './components/AuditLogger';
 
 export default function App() {
@@ -77,7 +75,7 @@ export default function App() {
   });
 
   // --- UI Layout Navigation state ---
-  const [currentTab, setCurrentTab] = useState<'dashboard' | 'subscriptions' | 'invoices' | 'usage' | 'logs' | 'schema'>(() => {
+  const [currentTab, setCurrentTab] = useState<'dashboard' | 'subscriptions' | 'invoices' | 'usage' | 'logs'>(() => {
     const cached = localStorage.getItem('saas_billing_active_tab');
     return (cached as any) || 'dashboard';
   });
@@ -568,7 +566,6 @@ export default function App() {
             { id: 'invoices', label: 'Invoices & Payments', icon: Briefcase },
             { id: 'usage', label: 'Usage Metering', icon: RefreshCw },
             { id: 'logs', label: 'SOC-2 Audit Trail', icon: ShieldCheck },
-            { id: 'schema', label: 'DB Schema & Rest Specifications', icon: Settings },
           ].map((tab) => {
             const Icon = tab.icon;
             const active = currentTab === tab.id;
@@ -1309,11 +1306,6 @@ export default function App() {
             onTriggerSimulatedAction={triggerSimulatedAction}
             currentUserRole={role}
           />
-        )}
-
-        {/* TAB 6: SYSTEM ARCHITECTURE & API SCHEMA */}
-        {currentTab === 'schema' && (
-          <SchemaView />
         )}
 
       </main>
